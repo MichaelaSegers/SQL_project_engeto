@@ -16,6 +16,7 @@ Všechna data budu zjišťovat za společné období obou tabulek, tedy 2006-201
 
 Prvním skriptem tedy vyberu požadovaná data z tabulky payroll. https://github.com/MichaelaSegers/SQL_project_engeto/blob/14b4feaa868a7139fd07b0c625ad8ae4fe76e4ac/SQL_project.sql#L15
 Tabulka payroll obsahuje data po kvartálech, potřebuji tedy získat průměrnou mzdu za roky.
+Počítám s calculation_code 200 pro mzdy přepočtené na celé úvazky.
 
 Druhým skriptem vyberu požadovaná data z tabulky prices. https://github.com/MichaelaSegers/SQL_project_engeto/blob/14b4feaa868a7139fd07b0c625ad8ae4fe76e4ac/SQL_project.sql#L25
 Protože v celém projektu pracuji pouze s roky, data seskupím podle roku počátku měření.
@@ -31,3 +32,28 @@ Na Engeto serveru nemám povolení tvořit dočasné tabulky, finální tabulku 
 Buď přes common table expression, kde 3 kroky z původního způsobu spojím do jednoho. https://github.com/MichaelaSegers/SQL_project_engeto/blob/14b4feaa868a7139fd07b0c625ad8ae4fe76e4ac/SQL_project.sql#L74
 
 Anebo pomocné tabulky payroll a prices vytvořím jako standardní, ne dočasné. A po vytvoření finální tabulky je smažu. https://github.com/MichaelaSegers/SQL_project_engeto/blob/14b4feaa868a7139fd07b0c625ad8ae4fe76e4ac/SQL_project.sql#L107
+
+
+1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
+
+Potřebuji porovnat mzdy vždy s předchozím rokem. Protože v tabulce mám jako nejstarší rok v tabulce 2006, za tento rok mi bude růst vycházet NULL, protože nemám s čím porovnávat (pouze pokud bych importovala data z původní tabulky payroll v databázi za rok 2005).
+U roku 2006 v této otázce proto nehodnotím růst, pouze využiji data o mzdách.
+<link>
+
+V tomto selectu vidím konkrétní meziroční poklesy v jednotlivých odvětvích od největších poklesů mezd.
+
+Můžeme také zhodnotit průměrné meziroční pohyby mezd, tedy pro jednotlivá odvětví za celé období.
+<link>
+
+Odpověď na otázku č.1:
+V průběhu let 2006-2018 došlo k největšímu meziročnímu poklesu mezd v:
+	- peněžnictví a pojišťovnictví v roce 2013 (-8,83%)
+	- výrobě a rozvodu elektřiny a plynu, tepla a klimatiz. vzduchu v roce 2013 (-4,44%)
+	- těžbě a dobývání v roce 2013 (-3,24%)
+
+Naopak největší meziroční růst mezd proběhl v:
+	- výrobě a rozvodu elektřiny a plynu, tepla a klimatiz. vzduchu v roce 2008 (13,76%)
+	- těžbě a dobývání v roce 2008 (13,75%)
+	- profesní, vědecké a technické činnosti v roce 2008 (12,41%)
+
+Za celkové období 2006-2018 je ve všech odvětvích průměrný růst mezd pozitivní. Nejnižší průměrný meziroční procentuální růst zaznamenalo peněžnictví a pojišťovnictví (2,75%), nejvyšší naopak zdravotní a sociální péče (4,95%).
