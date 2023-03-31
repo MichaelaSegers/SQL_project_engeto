@@ -18,6 +18,7 @@ SELECT
 	cpay.payroll_year AS year_salary
 FROM czechia_payroll cpay 
 WHERE cpay.value_type_code = 5958
+	AND cpay.calculation_code = 200
 GROUP BY cpay.industry_branch_code, cpay.payroll_year
 ORDER BY cpay.payroll_year, cpay.industry_branch_code;
 
@@ -45,6 +46,7 @@ CREATE OR REPLACE TEMPORARY TABLE t_payroll_project AS
 	LEFT JOIN czechia_payroll_industry_branch cpib 
 		ON cpay.industry_branch_code = cpib.code 
 	WHERE cpay.value_type_code = 5958
+		AND cpay.calculation_code = 200
 	GROUP BY cpay.industry_branch_code, cpay.payroll_year
 	ORDER BY cpay.payroll_year, cpay.industry_branch_code;
 	
@@ -87,6 +89,7 @@ CREATE OR REPLACE TABLE t_michaela_segers_project_SQL_primary_final AS
 	LEFT JOIN czechia_payroll_industry_branch cpib 
 		ON cpay.industry_branch_code = cpib.code 
 	WHERE cpay.value_type_code = 5958
+		AND cpay.calculation_code = 200
 	GROUP BY cpay.industry_branch_code, cpay.payroll_year),
 tpri AS (
 	SELECT 
@@ -120,6 +123,7 @@ CREATE TABLE t_payroll_project AS
 	LEFT JOIN czechia_payroll_industry_branch cpib 
 		ON cpay.industry_branch_code = cpib.code 
 	WHERE cpay.value_type_code = 5958
+		AND cpay.calculation_code = 200
 	GROUP BY cpay.industry_branch_code, cpay.payroll_year
 	ORDER BY cpay.payroll_year, cpay.industry_branch_code;
 	
