@@ -6,6 +6,7 @@
  * price-produkt
  * price-rok
  * price-průměrná cena za rok
+ * price-množství produktu za cenu
  */
 
 -- Převod na společné roky: 2006-2018 - není třeba samostantě definovat, provede se přes inner join.
@@ -14,6 +15,7 @@
 /* 5958 = kód pro mzdy */
 SELECT
 	AVG(cpay.value) AS avg_salary,
+	LAG(AVG(cpay.value)) OVER (PARTITION BY cpay.industry_branch_code ORDER BY cpay.payroll_year) AS previous_avg_salary,
 	cpay.industry_branch_code,
 	cpay.payroll_year AS year_salary
 FROM czechia_payroll cpay 
@@ -151,6 +153,80 @@ DROP TABLE t_prices_project;
 
 DROP TABLE t_payroll_project;
 
-SELECT *
-FROM t_michaela_segers_project_SQL_primary_final tmspspf;
+-- 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
+
+WITH salaries AS (
+	SELECT DISTINCT 
+		year_salary,
+		industry_branch_code,
+		industry,
+		avg_salary
+	FROM t_michaela_segers_project_SQL_primary_final tms
+	WHERE industry_branch_code IS NOT NULL
+	)
+SELECT 
+	*,
+	LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary) AS salary_prev,
+	ROUND((avg_salary - LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary)) * 100 / LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary), 2) AS salary_growth
+FROM salaries
+ORDER BY salary_growth;
+
+
+SELECT *
+FROM (
+	SELECT 
+		*,
+		LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary) AS salary_prev,
+		ROUND((avg_salary - LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary)) * 100 / LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary), 2) AS salary_growth
+	FROM (
+		SELECT DISTINCT 
+			year_salary,
+			industry_branch_code,
+			industry,
+			avg_salary
+		FROM t_michaela_segers_project_SQL_primary_final
+		WHERE industry_branch_code IS NOT NULL ) x
+	) y
+WHERE year_salary > 2006
+ORDER BY salary_growth;
+		
+SELECT *
+FROM (
+	SELECT 
+		*,
+		LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary) AS salary_prev,
+		ROUND((avg_salary - LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary)) * 100 / LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary), 2) AS salary_growth
+	FROM (
+		SELECT DISTINCT 
+			year_salary,
+			industry_branch_code,
+			industry,
+			avg_salary
+		FROM t_michaela_segers_project_SQL_primary_final
+		WHERE industry_branch_code IS NOT NULL ) x
+	) y
+WHERE year_salary > 2006
+ORDER BY salary_growth DESC;
+
+SELECT
+	industry_branch_code,
+	industry,
+	ROUND(AVG(y.salary_growth), 2) AS avg_salary_growth
+FROM (
+	SELECT 
+		*,
+		LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary) AS salary_prev,
+		ROUND((avg_salary - LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary)) * 100 / LAG(avg_salary) OVER (PARTITION BY industry_branch_code ORDER BY year_salary), 2) AS salary_growth
+	FROM (
+		SELECT DISTINCT 
+			year_salary,
+			industry_branch_code,
+			industry,
+			avg_salary
+		FROM t_michaela_segers_project_SQL_primary_final
+		WHERE industry_branch_code IS NOT NULL ) x
+	) y
+WHERE year_salary > 2006
+GROUP BY industry_branch_code
+ORDER BY avg_salary_growth;
