@@ -53,6 +53,7 @@ CREATE OR REPLACE TEMPORARY TABLE t_prices_project AS
 		AVG(cpri.value) AS avg_value, 
 		cpri.category_code,
 		cpc.name AS item,
+		CONCAT(cpc.price_value, ' ', cpc.price_unit) AS units,
 		YEAR(cpri.date_from) AS year_price 
 	FROM czechia_price cpri
 	JOIN czechia_price_category cpc 
@@ -67,7 +68,7 @@ SELECT *
 FROM t_prices_project;
 
 
-CREATE TABLE IF NOT EXISTS t_michaela_segers_project_SQL_primary_final AS
+CREATE OR REPLACE TABLE t_michaela_segers_project_SQL_primary_final AS
 	SELECT *
 	FROM t_payroll_project tpay
 	JOIN t_prices_project tpri
@@ -75,7 +76,7 @@ CREATE TABLE IF NOT EXISTS t_michaela_segers_project_SQL_primary_final AS
 
 -- engeto server nedovolí vytvořit dočasné tabulky, takže alternativy:
 
-CREATE TABLE t_michaela_segers_project_SQL_primary_final AS 
+CREATE OR REPLACE TABLE t_michaela_segers_project_SQL_primary_final AS 
  WITH tpay AS (
 	SELECT
 		AVG(cpay.value) AS avg_salary,
@@ -92,6 +93,7 @@ tpri AS (
 		AVG(cpri.value) AS avg_value, 
 		cpri.category_code,
 		cpc.name AS item,
+		CONCAT(cpc.price_value, ' ', cpc.price_unit) AS units,
 		YEAR(cpri.date_from) AS year_price 
 	FROM czechia_price cpri
 	JOIN czechia_price_category cpc 
@@ -126,6 +128,7 @@ CREATE TABLE t_prices_project AS
 		AVG(cpri.value) AS avg_value, 
 		cpri.category_code,
 		cpc.name AS item,
+		CONCAT(cpc.price_value, ' ', cpc.price_unit) AS units,
 		YEAR(cpri.date_from) AS year_price 
 	FROM czechia_price cpri
 	JOIN czechia_price_category cpc 
