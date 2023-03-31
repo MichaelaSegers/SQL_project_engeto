@@ -30,6 +30,10 @@ FROM czechia_price cpri
 WHERE cpri.region_code IS NULL
 GROUP BY cpri.category_code, YEAR(cpri.date_from);
 
+SELECT *
+FROM czechia_price_category cpc
+WHERE name LIKE '%mléko%' OR name LIKE '%chléb%';
+
 
 CREATE OR REPLACE TEMPORARY TABLE t_payroll_project AS
 	SELECT
@@ -142,3 +146,4 @@ DROP TABLE t_payroll_project;
 
 SELECT *
 FROM t_michaela_segers_project_SQL_primary_final tmspspf;
+
