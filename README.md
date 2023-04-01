@@ -41,12 +41,12 @@ V tabulce economies chybí poměrně hodně dat pro GDP a GINI za různé země 
 
 Potřebuji porovnat mzdy vždy s předchozím rokem. Protože v tabulce mám jako nejstarší rok v tabulce 2006, za tento rok mi bude růst vycházet NULL, protože nemám s čím porovnávat (pouze pokud bych importovala data z původní tabulky payroll v databázi za rok 2005).
 U roku 2006 v této otázce proto nehodnotím růst, pouze využiji data o mzdách.
-<link>
+https://github.com/MichaelaSegers/SQL_project_engeto/blob/4e04224488debf88f68293e56ada5054467d71b5/SQL_project.sql#L207
 
 V tomto selectu vidím konkrétní meziroční poklesy v jednotlivých odvětvích od největších poklesů mezd.
 
 Můžeme také zhodnotit průměrné meziroční pohyby mezd, tedy pro jednotlivá odvětví za celé období.
-<link>
+https://github.com/MichaelaSegers/SQL_project_engeto/blob/4e04224488debf88f68293e56ada5054467d71b5/SQL_project.sql#L243
 
 Odpověď na otázku č.1:
 V průběhu let 2006-2018 došlo k největšímu meziročnímu poklesu mezd v:
