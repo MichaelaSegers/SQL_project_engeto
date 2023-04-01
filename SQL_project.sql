@@ -157,7 +157,7 @@ DROP TABLE t_payroll_project;
 
 /*
  * economies - rok
- * economies - země (Evropské)
+ * economies - země (evropské)
  * economies - GDP
  * economies - GINI
  * economies - population
@@ -261,4 +261,35 @@ FROM (
 WHERE year_salary > 2006
 GROUP BY industry_branch_code
 ORDER BY avg_salary_growth;
+
+-- 2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
+
+SELECT *
+FROM t_michaela_segers_project_sql_primary_final tmspspf
+WHERE year_salary IN (2006, 2018)
+	AND (item LIKE '%mléko%' OR item LIKE '%chléb%');
+	
+SELECT 
+	avg_salary,
+	industry,
+	year_salary,
+	avg_value,
+	item,
+	FLOOR(avg_salary / avg_value) AS items_afforded 
+FROM t_michaela_segers_project_sql_primary_final tmspspf
+WHERE year_salary IN (2006, 2018)
+	AND (item LIKE '%mléko%' OR item LIKE '%chléb%')
+	AND industry_branch_code IS NULL;
+
+SELECT 
+	avg_salary,
+	industry,
+	year_salary,
+	avg_value,
+	item,
+	FLOOR(avg_salary / avg_value) AS items_afforded 
+FROM t_michaela_segers_project_sql_primary_final tmspspf
+WHERE year_salary IN (2006, 2018)
+	AND (item LIKE '%mléko%' OR item LIKE '%chléb%')
+ORDER BY items_afforded;
 
