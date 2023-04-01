@@ -153,6 +153,37 @@ DROP TABLE t_prices_project;
 
 DROP TABLE t_payroll_project;
 
+-- Tabulka 2
+
+/*
+ * economies - rok
+ * economies - země (Evropské)
+ * economies - GDP
+ * economies - GINI
+ * economies - population
+ */
+
+SELECT *
+FROM economies e;
+
+SELECT *
+FROM countries c;
+
+CREATE OR REPLACE TABLE t_michaela_segers_project_SQL_secondary_final AS
+	SELECT 
+		e.country,
+		e.`year`,
+		e.GDP,
+		e.population,
+		e.gini
+	FROM economies e 
+	JOIN countries c 
+		ON e.country = c.country 
+	WHERE c.continent = 'Europe'
+		AND e.`year` BETWEEN 2006 AND 2018
+	ORDER BY e.country, e.`year`;
+
+
 -- 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
 
@@ -230,3 +261,4 @@ FROM (
 WHERE year_salary > 2006
 GROUP BY industry_branch_code
 ORDER BY avg_salary_growth;
+

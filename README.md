@@ -33,6 +33,9 @@ Buď přes common table expression, kde 3 kroky z původního způsobu spojím d
 
 Anebo pomocné tabulky payroll a prices vytvořím jako standardní, ne dočasné. A po vytvoření finální tabulky je smažu. https://github.com/MichaelaSegers/SQL_project_engeto/blob/14b4feaa868a7139fd07b0c625ad8ae4fe76e4ac/SQL_project.sql#L107
 
+Tvorba druhé tabulky (další země)
+
+V tabulce economies chybí poměrně hodně dat pro GDP a GINI za různé země v různých letech.
 
 1. Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?
 
