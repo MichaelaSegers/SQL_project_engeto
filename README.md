@@ -60,3 +60,24 @@ Naopak největší meziroční růst mezd proběhl v:
 	- profesní, vědecké a technické činnosti v roce 2008 (12,41%)
 
 Za celkové období 2006-2018 je ve všech odvětvích průměrný růst mezd pozitivní. Nejnižší průměrný meziroční procentuální růst zaznamenalo peněžnictví a pojišťovnictví (2,75%), nejvyšší naopak zdravotní a sociální péče (4,95%).
+
+2. Kolik je možné si koupit litrů mléka a kilogramů chleba za první a poslední srovnatelné období v dostupných datech cen a mezd?
+
+Za průměrné roční mzdy napříč odvětvími bylo možné pořídit (zaokrouhleno dolů na celá čísla):
+	- 1353 l mléka v roce 2006
+	- 1211 kg chleba v roce 2006
+	- 1616 l mléka v roce 2018
+	- 1321 kg chleba v roce 2018
+
+Pro zajímavost je ještě možné se podívat, jak se toto liší v různých odvětvích.
+<link>
+
+3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
+
+Data za bílé víno jsou dostupná pouze od roku 2015.
+
+Nejméně zdražila rajská jablka mezi lety 2006-2007 (zlevnění o 30,28%), průměrně nejpomaleji za celé období měření (tedy 2006-2018, ale v případě bílého vína měřeno pouze 2015-2018) zdražil cukr krystalový (dokonce meziročně průměrně zlevňoval o 1,92%).
+<link>
+
+Pro kontrolu jsem si zobrazila ceny cukru v letech 2006 a 2018.
+<link>
