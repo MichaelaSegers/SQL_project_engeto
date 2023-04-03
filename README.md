@@ -90,4 +90,14 @@ Jednotlivé produkty měly meziroční průměrný růst cen často výrazně vy
 Průměrný růst cen všech produktů nebyl nikdy o 10% vyšší než průměrný růst mezd - nejvyšší rozdíl byl v roce 2013 o 6,14%.
 <link>
 
-5.
+5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
+
+U této otázky hodně záleží na tom, jak si definujeme výraznější růst mezd, cen i HDP. Vzhledem k tomu, že v rámci projektu toto definováno není, stanovila jsem výraznější růst od 3% a výraznější pokles od -3%, hodnoty mezi nimi ponechávám jako neutrální.
+<link>
+
+Významně by pomohla vizualizace dat spíše než je číst z tabulky a podobnosti v pohybech odhadovat.
+
+V mé klasifikaci stouplo HDP výrazně v letech 2007, 2015, 2017 a 2018. HDP výrazně pokleslo v roce 2009.
+V roce 2007 se projevil výrazný růst HDP i v růstu mezd a cen, které potom výrazně narostly i v následujícím roce.
+Vyššímu nárůstu HDP v letech 2015, 2017 a 2018 odpovídá i signifikantní růst mezd v celém období 2015-2018. Ceny však výrazně vzrostly z tohoto období pouze v roce 2017.
+V roce 2009 spolu s HDP významně poklesly i ceny. Ačkoliv v tomto roce mzdy vyrostly dle mého kritéria stále výrazně (o 3,37%), oproti růstu v předchozím roce (o 7,85%) je to značný pokles. Proto bych zhodnotila, že se pokles HDP ukázal i ve mzdách.
