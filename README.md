@@ -70,30 +70,29 @@ Za průměrné roční mzdy napříč odvětvími bylo možné pořídit (zaokro
 	- 1321 kg chleba v roce 2018
 
 Pro zajímavost je ještě možné se podívat, jak se toto liší v různých odvětvích.
-<link>
+https://github.com/MichaelaSegers/SQL_project_engeto/blob/377a89c4c2a42d352c3aa719c3801b465206cecd/SQL_project.sql#L285
 
 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?
 
 Data za bílé víno jsou dostupná pouze od roku 2015.
 
 Nejméně zdražila rajská jablka mezi lety 2006-2007 (zlevnění o 30,28%), průměrně nejpomaleji za celé období měření (tedy 2006-2018, ale v případě bílého vína měřeno pouze 2015-2018) zdražil cukr krystalový (dokonce meziročně průměrně zlevňoval o 1,92%).
-<link>
 
 Pro kontrolu jsem si zobrazila ceny cukru v letech 2006 a 2018.
-<link>
+https://github.com/MichaelaSegers/SQL_project_engeto/blob/377a89c4c2a42d352c3aa719c3801b465206cecd/SQL_project.sql#L339
 
 4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
 
 Jednotlivé produkty měly meziroční průměrný růst cen často výrazně vyšší než průměrný meziroční růst mezd.
-<link>
+https://github.com/MichaelaSegers/SQL_project_engeto/blob/377a89c4c2a42d352c3aa719c3801b465206cecd/SQL_project.sql#L373
 
 Průměrný růst cen všech produktů nebyl nikdy o 10% vyšší než průměrný růst mezd - nejvyšší rozdíl byl v roce 2013 o 6,14%.
-<link>
+https://github.com/MichaelaSegers/SQL_project_engeto/blob/377a89c4c2a42d352c3aa719c3801b465206cecd/SQL_project.sql#L411
 
 5. Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
 
-U této otázky hodně záleží na tom, jak si definujeme výraznější růst mezd, cen i HDP. Vzhledem k tomu, že v rámci projektu toto definováno není, stanovila jsem výraznější růst od 3% a výraznější pokles od -3%, hodnoty mezi nimi ponechávám jako neutrální.
-<link>
+U této otázky hodně záleží na tom, jak si definujeme výraznější růst mezd, cen i HDP. Vzhledem k tomu, že v rámci projektu toto definováno není, stanovila jsem výraznější růst nad 3% a výraznější pokles pod -3%, hodnoty mezi nimi ponechávám jako neutrální.
+https://github.com/MichaelaSegers/SQL_project_engeto/blob/377a89c4c2a42d352c3aa719c3801b465206cecd/SQL_project.sql#L458
 
 Významně by pomohla vizualizace dat spíše než je číst z tabulky a podobnosti v pohybech odhadovat.
 
