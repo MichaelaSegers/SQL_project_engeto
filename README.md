@@ -81,3 +81,13 @@ Nejméně zdražila rajská jablka mezi lety 2006-2007 (zlevnění o 30,28%), pr
 
 Pro kontrolu jsem si zobrazila ceny cukru v letech 2006 a 2018.
 <link>
+
+4. Existuje rok, ve kterém byl meziroční nárůst cen potravin výrazně vyšší než růst mezd (větší než 10 %)?
+
+Jednotlivé produkty měly meziroční průměrný růst cen často výrazně vyšší než průměrný meziroční růst mezd.
+<link>
+
+Průměrný růst cen všech produktů nebyl nikdy o 10% vyšší než průměrný růst mezd - nejvyšší rozdíl byl v roce 2013 o 6,14%.
+<link>
+
+5.
