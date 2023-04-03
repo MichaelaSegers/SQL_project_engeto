@@ -1,3 +1,5 @@
+-- DISCORD USER Michaela S.#9290
+
 -- Tabulka 1
 
 /* payroll-rok
