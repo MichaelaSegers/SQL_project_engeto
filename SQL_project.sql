@@ -37,7 +37,7 @@ GROUP BY cpri.category_code, YEAR(cpri.date_from);
 
 SELECT *
 FROM czechia_price_category cpc
-WHERE name LIKE '%mléko%' OR name LIKE '%chléb%';
+WHERE name = 'Mléko polotučné pasterované' OR name = 'Chléb konzumní kmínový';
 
 
 CREATE OR REPLACE TEMPORARY TABLE t_payroll_project AS
@@ -270,7 +270,7 @@ ORDER BY avg_salary_growth;
 SELECT *
 FROM t_michaela_segers_project_sql_primary_final tmspspf
 WHERE year_salary IN (2006, 2018)
-	AND (item LIKE '%mléko%' OR item LIKE '%chléb%');
+	AND (item = 'Mléko polotučné pasterované' OR item = 'Chléb konzumní kmínový');
 	
 SELECT 
 	avg_salary,
@@ -281,7 +281,7 @@ SELECT
 	FLOOR(avg_salary / avg_value) AS items_afforded 
 FROM t_michaela_segers_project_sql_primary_final tmspspf
 WHERE year_salary IN (2006, 2018)
-	AND (item LIKE '%mléko%' OR item LIKE '%chléb%')
+	AND (item = 'Mléko polotučné pasterované' OR item = 'Chléb konzumní kmínový')
 	AND industry_branch_code IS NULL;
 
 SELECT 
@@ -293,7 +293,7 @@ SELECT
 	FLOOR(avg_salary / avg_value) AS items_afforded 
 FROM t_michaela_segers_project_sql_primary_final tmspspf
 WHERE year_salary IN (2006, 2018)
-	AND (item LIKE '%mléko%' OR item LIKE '%chléb%')
+	AND (item = 'Mléko polotučné pasterované' OR item = 'Chléb konzumní kmínový')
 ORDER BY items_afforded;
 
 -- 3. Která kategorie potravin zdražuje nejpomaleji (je u ní nejnižší percentuální meziroční nárůst)?

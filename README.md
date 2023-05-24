@@ -100,3 +100,10 @@ V mé klasifikaci stouplo HDP výrazně v letech 2007, 2015, 2017 a 2018. HDP v�
 V roce 2007 se projevil výrazný růst HDP i v růstu mezd a cen, které potom výrazně narostly i v následujícím roce.
 Vyššímu nárůstu HDP v letech 2015, 2017 a 2018 odpovídá i signifikantní růst mezd v celém období 2015-2018. Ceny však výrazně vzrostly z tohoto období pouze v roce 2017.
 V roce 2009 spolu s HDP významně poklesly i ceny. Ačkoliv v tomto roce mzdy vyrostly dle mého kritéria stále výrazně (o 3,37%), oproti růstu v předchozím roce (o 7,85%) je to značný pokles. Proto bych zhodnotila, že se pokles HDP ukázal i ve mzdách.
+
+---
+
+FEEDBACK:
+- vylepšit commit messages
+- rozdělit skript do více souborů dle jednotlivých otázek
+- upravit formulaci např. pro případ přidání nových položek: https://github.com/MichaelaSegers/SQL_project_engeto/blob/9e5aae5353aaaf8c74c0f3eb3514afc1c1c1a5e8/SQL_project.sql#L40
